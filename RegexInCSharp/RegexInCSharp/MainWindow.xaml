@@ -5,8 +5,43 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RegexInCSharp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="250" Width="400">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="5" />
+            <ColumnDefinition Width="50" />
+            <ColumnDefinition Width="300" />
+            <ColumnDefinition Width="5" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="5" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="5" />
+        </Grid.RowDefinitions>
+        <Label Grid.Column="1" Grid.Row="1">Name</Label>
+        <TextBox x:Name="txtName"
+                 Grid.Column="2" 
+                 Grid.Row="1" 
+                 Width="300" 
+                 />
+        <Label Grid.Column="1" Grid.Row="2">Phone</Label>
+        <TextBox x:Name="txtPhone"
+                 Grid.Column="2" 
+                 Grid.Row="2" 
+                 Width="300" />
+        <Label Grid.Column="1" Grid.Row="3">Email</Label>
+        <TextBox x:Name="txtEmail"
+                 Grid.Column="2" 
+                 Grid.Row="3" 
+                 Width="300" />
+        <Button x:Name="btnSave"
+                Grid.Column="2"
+                Grid.Row="4"
+                >
+            Save            
+        </Button>
     </Grid>
 </Window>
