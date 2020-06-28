@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -23,6 +24,44 @@ namespace RegexInCSharp
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void btnSave_Click(object sender, RoutedEventArgs e)
+        {
+            if (!ValidName(txtName.Text))
+                MessageBox.Show("The name is invalid (only alphabetical characters are allowed)");
+            if (!ValidPhone(txtPhone.Text))
+                MessageBox.Show("The phone number is not valid.");
+            if (!ValidEmail(txtEmail.Text))
+                MessageBox.Show("The Email is not valid.");
+            MessageBox.Show("All good.");
+        }
+
+        public bool ValidPhone(string text)
+        {
+            if (!Regex.IsMatch(text, @"^\+?(\d[\d-. ]+)?(\([\d-. ]+\))?[\d-. ]+\d$"))
+            {
+                return false;
+            }
+            return true;
+        }
+
+        public bool ValidEmail(string text)
+        {
+            if (!Regex.IsMatch(text, @"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$"))
+            {
+                return false;
+            }
+            return true;
+        }
+
+        public bool ValidName(string text)
+        {
+            if (!Regex.IsMatch(text, @"^([A-Za-z]+\s*)+$"))
+            {
+                return false;
+            }
+            return true;
         }
     }
 }

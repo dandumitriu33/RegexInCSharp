@@ -21,25 +21,34 @@
             <RowDefinition Height="*" />
             <RowDefinition Height="5" />
         </Grid.RowDefinitions>
-        <Label Grid.Column="1" Grid.Row="1">Name</Label>
+        <Label Grid.Column="1" Grid.Row="1" 
+               HorizontalContentAlignment="Center" 
+               VerticalContentAlignment="Center">Name</Label>
         <TextBox x:Name="txtName"
+                 Margin="10"
                  Grid.Column="2" 
                  Grid.Row="1" 
-                 Width="300" 
+                 Width="280" 
                  />
-        <Label Grid.Column="1" Grid.Row="2">Phone</Label>
+        <Label Grid.Column="1" Grid.Row="2"
+               HorizontalContentAlignment="Center"
+               VerticalContentAlignment="Center">Phone</Label>
         <TextBox x:Name="txtPhone"
+                 Margin="10"
                  Grid.Column="2" 
                  Grid.Row="2" 
-                 Width="300" />
-        <Label Grid.Column="1" Grid.Row="3">Email</Label>
+                 Width="280" />
+        <Label Grid.Column="1" Grid.Row="3"
+               HorizontalContentAlignment="Center"
+               VerticalContentAlignment="Center">Email</Label>
         <TextBox x:Name="txtEmail"
+                 Margin="10"
                  Grid.Column="2" 
                  Grid.Row="3" 
-                 Width="300" />
+                 Width="280" />
         <Button x:Name="btnSave"
                 Grid.Column="2"
-                Grid.Row="4"
+                Grid.Row="4" Click="btnSave_Click"
                 >
             Save            
         </Button>
