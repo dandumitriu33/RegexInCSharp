@@ -34,7 +34,15 @@ namespace RegexInCSharp
                 MessageBox.Show("The phone number is not valid.");
             if (!ValidEmail(txtEmail.Text))
                 MessageBox.Show("The Email is not valid.");
+            string reformattedPhone = ReformatPhone(txtPhone.Text);
+            txtPhone.Text = reformattedPhone;
             MessageBox.Show("All good.");
+        }
+
+        private string ReformatPhone(string text)
+        {
+            var result = Regex.Replace(text, @"(\w{3})(\w{3})(\w{4})", @"($1) $2-$3");
+            return result;
         }
 
         public bool ValidPhone(string text)
