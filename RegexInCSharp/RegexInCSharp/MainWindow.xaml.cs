@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -36,7 +37,14 @@ namespace RegexInCSharp
                 MessageBox.Show("The Email is not valid.");
             string reformattedPhone = ReformatPhone(txtPhone.Text);
             txtPhone.Text = reformattedPhone;
+            WriteToFileUTF7(reformattedPhone);
             MessageBox.Show("All good.");
+        }
+
+        private void WriteToFileUTF7(string reformattedPhone)
+        {
+            string path = @"C:\Users\Dan\codecool\advanced\w2\RegexInCSharp\myfile.txt";
+            File.WriteAllText(path, reformattedPhone, Encoding.GetEncoding(65000));
         }
 
         private string ReformatPhone(string text)
